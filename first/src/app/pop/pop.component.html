@@ -1,0 +1,203 @@
+<div class="container" *ngIf="!formSubmitted">
+  <h2>Employee Registration Form</h2>
+  <form [formGroup]="pop">    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="employeeId">Employee ID</label>
+          <input type="text" class="form-control" id="employeeId" formControlName="employeeId" placeholder="Enter Employee ID" required>
+        </div> 
+      </div>      
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="employeeName">Employee Name</label>
+          <input type="text" class="form-control" id="employeeName" formControlName="employeeName" placeholder="Enter Employee Name" required>
+        </div>
+      </div>        
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter Email" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="location">Location</label>           
+          <select class="form-control" id="location" formControlName="location" required> 
+            <option value="Select Location">Select location</option>           
+            <option value="chennai">Chennai</option>
+            <option value="noida">Noida</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">         
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" formControlName="gender" placeholder="Gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+                
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="productGroup">Product Group</label>
+          <select class="form-control" id="productGroup" formControlName="productGroup" placeholder="Select Product Group">          
+            <option value="Aide Apps">Aide Apps</option>
+            <option value="Lorenzo">Lorenzo</option>
+          </select>
+        </div>
+               
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="product">Product</label>
+          <select class="form-control" id="product" formControlName="product">                      
+            <option value="Aide Apps-Maintenance">Aide Apps-Maintenance</option>
+            <option value="ClinicalAide">ClinicalAide</option>
+            <option value="Common Services">Common Services</option>
+            <option value="Lorenzo Browser Modernisation">Lorenzo Browser Modernisation</option>
+            <option value="Lorenzo ORBIS Integration">Lorenzo ORBIS Integration</option>
+          </select>              
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="unifiedRoles">Unified Roles</label>
+          <select class="form-control" id="unifiedRoles" formControlName="unifiedRoles">                     
+            <option value="Engineering">Engineering</option>
+            <option value="Testing">Testing</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="productWorkedArea">Product Worked Area</label>
+          <select class="form-control" id="productWorkedArea" formControlName="productWorkedArea">                    
+            <option value="DevOPS">DevOPS</option>
+            <option value="LZO API - Support">LZO API-Support</option>
+            <option value="Common Services">Common Services</option>
+            <option value="Lorenzo Browser Modernisation">Lorenzo Browser Modernisation</option>
+            <option value="Run & Maintenance">Run & Maintenance</option>
+            <option value="CA-Other Regions">CA-Other Regions</option>
+          </select> 
+        </div>          
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="workGroup">Work Group</label>
+          <select class="form-control" id="workGroup" formControlName="workGroup">                       
+            <option value="Developer">Developer</option>
+            <option value="Tester">Tester</option>
+          </select>       
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="hlRole">HL Role</label>
+          <select class="form-control" id="hlRole" formControlName="hlRole">                      
+            <option value="Developer">Developer</option>
+            <option value="Tester">Tester</option>
+            <option value="Architect">Architect</option>
+          </select>    
+        </div>         
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="hlDesignation">HL Designation</label>
+          <select class="form-control" id="hlDesignation" formControlName="hlDesignation">                      
+            <option value="Associate Professional Product Developer">Associate Professional Product Developer</option>
+            <option value="Associate Professional Product Test">Associate Professional Product Test</option>
+            <option value="Professional 1 Product Developer">Professional 1 Product Developer</option>
+            <option value="Professional 2 Product Developer">Professional 2 Product Developer</option>
+            <option value="Professional 1 Application Developer">Professional 1 Application Developer</option>
+            <option value="Senior Professional Service Delivery Coordinator">Senior Professional Service Delivery Coordinator</option>
+            <option value="Senior Professional Application Architect">Senior Professional Application Architect</option>
+          </select> 
+        </div>          
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="hlTitle">HL Title</label>
+          <select class="form-control" id="hlTitle" formControlName="hlTitle" placeholder="select title">                       
+            <option value="Assoc.Profr">Assoc.Prof</option>
+            <option value="Prof 1">Prof 1</option>
+            <option value="Prof 2">Prof 2</option>
+            <option value="Sr.Prof">Sr.Prof</option>
+          </select>   
+        </div>
+      </div>        
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="reportingManager">Reporting Manager</label>
+          <input type="text" class="form-control" id="reportingManager" formControlName="reportingManager" placeholder="Enter Reporting Manager name" required>
+        </div>          
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="managerEmail">Manager Email</label>
+          <input type="text" class="form-control" id="managerEmail" formControlName="managerEmail" placeholder="Enter Manager Email" required>
+        </div>          
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="get">GET</label>
+          <input type="text" class="form-control" id="get" formControlName="get" placeholder="Enter GET" required>
+        </div>          
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cscDoj">CSC_DOJ</label>
+          <input type="date" class="form-control" id="cscDoj" formControlName="cscDoj" placeholder="Enter CSC_DOJ" required>
+        </div>          
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="dateOfLeaving">Date Of Leaving</label>
+          <input type="date" class="form-control" id="dateOfLeaving" formControlName="dateOfLeaving" placeholder="Enter Date Of Leaving" required>
+        </div>          
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="unit">Unit</label>
+          <input type="text" class="form-control" id="unit" formControlName="unit" placeholder="Enter Unit" required>
+        </div>          
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="owning">Owning</label>
+          <input type="text" class="form-control" id="owning" formControlName="owning" placeholder="Enter Owning" required>
+        </div>          
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-secondary" (click)="clearForm()">Clear Form</button>
+        <button type="submit" class="btn btn-primary" (click)="submitForm()">Submit</button>
+      </div>
+    </div>
+  </form>
+  <div class="success-message" *ngIf="formSubmitted">
+    <h3>Form submitted successfully!</h3>
+    <p>Thank you for your submission.</p>
+  </div>
+  
