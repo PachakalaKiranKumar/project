@@ -8,9 +8,5 @@ import { PopComponent } from './pop/pop.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private dialog: MatDialog) {}
-
-  openpop() {
-    this.dialog.open(PopComponent,{width:'80%',height:'70%'});
-  }
+  
 }

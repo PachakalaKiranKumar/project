@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-pop',
   templateUrl: './pop.component.html',
@@ -45,24 +46,28 @@ export class PopComponent implements OnInit {
 
   submitForm(): void {
     if (this.pop.valid) {
-      const formData = { ...this.pop.value };
-  
+      let formData =  this.pop.value;
+
       this.http.post('https://myapi-b7ad2-default-rtdb.asia-southeast1.firebasedatabase.app/data.json', formData)
         .subscribe(
           response => {
             console.log('Success:', response);
-            alert("Form submitted successfully!\nThank you for your submission.");
-            this.pop.reset(); // Reset the form
-            this.formSubmitted = true; // Set the formSubmitted flag to true
+            alert("Success......");
+            debugger;
+
+            this.pop.reset();
+            formData =  this.pop.value;
+
+            this.formSubmitted = false; // Set the formSubmitted flag to true
+            
           },
           error => {
             console.error('Error:', error);
-            alert("Form submission failed. Please try again.");
+            alert("Not Updated......");
           }
         );
     } else {
       console.log('Invalid form');
     }
   }
-  
 }
