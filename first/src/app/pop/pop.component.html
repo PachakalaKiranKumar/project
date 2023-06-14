@@ -1,6 +1,6 @@
 <div class="container" *ngIf="!formSubmitted">
     <div class="card">
-      <header class="mainHearder">
+      <header class="mainHearder card">
         <div class="row classRow">
           <div class="col-lg-4">
             <div class="clearForm">
@@ -24,60 +24,59 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="employeeId">Employee ID</label>
+              <label for="employeeId">Employee ID<span  style="color:red"> *</span></label>
               <input type="number" class="form-control" id="employeeId" formControlName="employeeId" placeholder="Enter Employee ID">
-              <span *ngIf="pop.get('employeeId')?.invalid && pop.get('employeeId')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('employeeId')?.invalid && pop.get('employeeId')?.touched" class="text-danger">Employee ID required.</span>
             </div> 
           </div>      
           <div class="col-md-6">
             <div class="form-group">
-              <label for="employeeName">Employee Name</label>
+              <label for="employeeName">Employee Name <span  style="color:red"> *</span></label>
               <input type="text" class="form-control" id="employeeName" formControlName="employeeName" placeholder="Enter Employee Name">
-              <span *ngIf="pop.get('employeeName')?.invalid && pop.get('employeeName')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('employeeName')?.invalid && pop.get('employeeName')?.touched" class="text-danger">Employee Name is required.</span>
             </div>
           </div>        
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email">Email<span  style="color:red"> *</span></label>
               <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter Email">
-              <span *ngIf="pop.get('email')?.invalid && pop.get('email')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('email')?.invalid && pop.get('email')?.touched" class="text-danger">Email is required.</span>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="location">Location</label>           
+              <label for="location">Location<span  style="color:red"> *</span></label>           
               <select class="form-select" id="location" formControlName="location" placeholder="Select"> 
                 <!-- <option value="Select Location">Select location</option>            -->
                 <option value="chennai">Chennai</option>
                 <option value="noida">Noida</option>
               </select>
-              <span *ngIf="pop.get('location')?.invalid && pop.get('location')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('location')?.invalid && pop.get('location')?.touched" class="text-danger">Location is required.</span>
             </div>
           </div>
         </div>
         <div class="row">         
           <div class="col-md-6">
             <div class="form-group">
-              <label for="gender" >Gender</label>
-              <select class="form-select" id="gender" formControlName="gender" >
-                
+              <label for="gender" >Gender<span  style="color:red"> *</span></label>
+              <select class="form-select" id="gender" formControlName="gender">                
                 <option value="male" >Male</option>
                 <option  value="Female">Female</option>
               </select>
-              <span *ngIf="pop.get('gender')?.invalid && pop.get('gender')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('gender')?.invalid && pop.get('gender')?.touched" class="text-danger">Gender is required.</span>
             </div>           
                     
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="productGroup">Product Group</label>
+              <label for="productGroup">Product Group <span  style="color:red"> *</span></label>
               <select class="form-select" id="productGroup" formControlName="productGroup" placeholder="Select Product Group"> 
                 <option value="Aide Apps">Aide Apps</option>
                 <option value="Lorenzo">Lorenzo</option>
               </select>
-              <span *ngIf="pop.get('productGroup')?.invalid && pop.get('productGroup')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('productGroup')?.invalid && pop.get('productGroup')?.touched" class="text-danger">Product Group is required.</span>
             </div>
                   
           </div>
@@ -85,7 +84,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="product">Product</label>
+              <label for="product">Product <span  style="color:red"> *</span></label>
               <select class="form-select" id="product" formControlName="product"> 
                                   
                 <option value="Aide Apps-Maintenance">Aide Apps-Maintenance</option>
@@ -94,27 +93,25 @@
                 <option value="Lorenzo Browser Modernisation">Lorenzo Browser Modernisation</option>
                 <option value="Lorenzo ORBIS Integration">Lorenzo ORBIS Integration</option>
               </select>              
-              <span *ngIf="pop.get('product')?.invalid && pop.get('product')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('product')?.invalid && pop.get('product')?.touched" class="text-danger">Product is required.</span>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="unifiedRoles">Unified Roles</label>          
-              <select class="form-select" id="unifiedRoles" formControlName="unifiedRoles"> 
-                                  
+              <label for="unifiedRoles">Unified Roles<span  style="color:red"> *</span></label>          
+              <select class="form-select" id="unifiedRoles" formControlName="unifiedRoles">                                   
                 <option value="Engineering">Engineering</option>
                 <option value="Testing">Testing</option>
               </select>
-              <span *ngIf="pop.get('unifiedRoles')?.invalid && pop.get('unifiedRoles')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('unifiedRoles')?.invalid && pop.get('unifiedRoles')?.touched" class="text-danger">Unified Roles is required.</span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="productWorkedArea">Product Worked Area</label>
-              <select class="form-select" id="productWorkedArea" formControlName="productWorkedArea">
-                                
+              <label for="productWorkedArea">Product Worked Area<span  style="color:red"> *</span></label>
+              <select class="form-select" id="productWorkedArea" formControlName="productWorkedArea">                                
                 <option value="DevOPS">DevOPS</option>
                 <option value="LZO API - Support">LZO API-Support</option>
                 <option value="Common Services">Common Services</option>
@@ -122,37 +119,36 @@
                 <option value="Run & Maintenance">Run & Maintenance</option>
                 <option value="CA-Other Regions">CA-Other Regions</option>
               </select> 
-              <span *ngIf="pop.get('productWorkedArea')?.invalid && pop.get('productWorkedArea')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('productWorkedArea')?.invalid && pop.get('productWorkedArea')?.touched" class="text-danger">Product Worked Area is required.</span>
             </div>          
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="workGroup">Work Group</label>
+              <label for="workGroup">Work Group<span  style="color:red"> *</span></label>
               <select class="form-select" id="workGroup" formControlName="workGroup">
                                   
                 <option value="Developer">Developer</option>
                 <option value="Tester">Tester</option>
               </select> 
-              <span *ngIf="pop.get('workGroup')?.invalid && pop.get('workGroup')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('workGroup')?.invalid && pop.get('workGroup')?.touched" class="text-danger">Work Group is required.</span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="hlRole">HL Role</label>
-              <select class="form-select" id="hlRole" formControlName="hlRole">
-                                    
+              <label for="hlRole">HL Role<span  style="color:red"> *</span></label>
+              <select class="form-select" id="hlRole" formControlName="hlRole">                                    
                 <option value="Developer">Developer</option>
                 <option value="Tester">Tester</option>
                 <option value="Architect">Architect</option>
-              </select> 
-              <span *ngIf="pop.get('hlRole')?.invalid && pop.get('hlRole')?.touched" class="text-danger">This field is required.</span>   
+              </select>
+              <span *ngIf="pop.get('hlRole')?.invalid && pop.get('hlRole')?.touched" class="text-danger">HL Role is required.</span>   
             </div>         
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="hlDesignation">HL Designation</label>
+              <label for="hlDesignation">HL Designation <span  style="color:red"> *</span></label>
               <select class="form-select" id="hlDesignation" formControlName="hlDesignation">                     
                 <option value="Associate Professional Product Developer">Associate Professional Product Developer</option>
                 <option value="Associate Professional Product Test">Associate Professional Product Test</option>
@@ -162,78 +158,75 @@
                 <option value="Senior Professional Service Delivery Coordinator">Senior Professional Service Delivery Coordinator</option>
                 <option value="Senior Professional Application Architect">Senior Professional Application Architect</option>
               </select> 
-              <span *ngIf="pop.get('hlDesignation')?.invalid && pop.get('hlDesignation')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('hlDesignation')?.invalid && pop.get('hlDesignation')?.touched" class="text-danger">HL Designation is required.</span>
             </div>                
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="hlTitle">HL Title</label>
+              <label for="hlTitle">HL Title<span  style="color:red"> *</span></label>
               <select class="form-select" id="hlTitle" formControlName="hlTitle" placeholder="select title">                     
                 <option value="Assoc.Profr">Assoc.Prof</option>
                 <option value="Prof 1">Prof 1</option>
                 <option value="Prof 2">Prof 2</option>
                 <option value="Sr.Prof">Sr.Prof</option>
               </select> 
-              <span *ngIf="pop.get('hlTitle')?.invalid && pop.get('hlTitle')?.touched" class="text-danger">This field is required.</span>    
+              <span *ngIf="pop.get('hlTitle')?.invalid && pop.get('hlTitle')?.touched" class="text-danger">HL Title is required.</span>    
             </div>
           </div>        
           <div class="col-md-6">
             <div class="form-group">
-              <label for="reportingManager">Reporting Manager</label>
+              <label for="reportingManager">Reporting Manager<span  style="color:red"> *</span></label>
               <input type="text" class="form-control" id="reportingManager" formControlName="reportingManager" placeholder="Enter Reporting Manager name" required>
             </div> 
-            <span *ngIf="pop.get('reportingManager')?.invalid && pop.get('reportingManager')?.touched" class="text-danger">This field is required.</span>
+            <span *ngIf="pop.get('reportingManager')?.invalid && pop.get('reportingManager')?.touched" class="text-danger">Reporting Manage is required.</span>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="managerEmail">Manager Email</label>
+              <label for="managerEmail">Manager Email<span  style="color:red"> *</span></label>
               <input type="text" class="form-control" id="managerEmail" formControlName="managerEmail" placeholder="Enter Manager Email" required>
             </div> 
-            <span *ngIf="pop.get('managerEmail')?.invalid && pop.get('managerEmail')?.touched" class="text-danger">This field is required.</span>  
+            <span *ngIf="pop.get('managerEmail')?.invalid && pop.get('managerEmail')?.touched" class="text-danger">Manager Email is required.</span>  
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="get">GET</label>
+              <label for="get">GET<span  style="color:red"> *</span></label>
               <input type="text" class="form-control" id="get" formControlName="get" placeholder="Enter GET" required>
-              <span *ngIf="pop.get('get')?.invalid && pop.get('get')?.touched" class="text-danger">This field is required.</span>
-
-                      
+              <span *ngIf="pop.get('get')?.invalid && pop.get('get')?.touched" class="text-danger">GET is required.</span>                      
             </div>        
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="cscDoj">CSC_DOJ</label>
+              <label for="cscDoj">CSC_DOJ<span  style="color:red"> *</span></label>
               <input type="date" class="form-control" id="cscDoj" formControlName="cscDoj" placeholder="Enter CSC_DOJ" required>
-              <span *ngIf="pop.get('cscDoj')?.invalid && pop.get('cscDoj')?.touched" class="text-danger">This field is required.</span>                  
+              <span *ngIf="pop.get('cscDoj')?.invalid && pop.get('cscDoj')?.touched" class="text-danger">CSC_DOJ is required.</span>                  
             </div>        
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="dateOfLeaving">Date Of Leaving</label>
-              <input type="date" class="form-control" id="dateOfLeaving" formControlName="dateOfLeaving" placeholder="Enter Date Of Leaving">  
-                    
-            </div>       
+              <input type="date" class="form-control" id="dateOfLeaving" formControlName="dateOfLeaving" placeholder="Enter Date Of Leaving">
+           </div>       
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="unit">Unit</label>
+              <label for="unit">Unit<span  style="color:red"> *</span></label>
               <input type="text" class="form-control" id="unit" formControlName="unit" placeholder="Enter Unit" required>
-              <span *ngIf="pop.get('unit')?.invalid && pop.get('unit')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('unit')?.invalid && pop.get('unit')?.touched" class="text-danger">Unit is required.</span>
             </div>                         
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label for="owning">Owning</label>
+              <label for="owning">Owning<span  style="color:red"> *</span></label>
               <input type="text" class="form-control" id="owning" formControlName="owning" placeholder="Enter Owning" required>
-              <span *ngIf="pop.get('owning')?.invalid && pop.get('owning')?.touched" class="text-danger">This field is required.</span>
+              <span *ngIf="pop.get('owning')?.invalid && pop.get('owning')?.touched" class="text-danger">Owning is required.</span>
             </div>                        
           </div>
         </div>
