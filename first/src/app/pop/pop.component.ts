@@ -15,14 +15,15 @@ export class PopComponent implements OnInit {
   dataGot: any;
   desiginationdata:any[]=[]
   roledata:any[]=[]
-  public titledata:any[]=[]
-  public owingdata:any[]=[]
-  public productdata:any[]=[]
+  titledata:any[]=[]
+  owingdata:any[]=[]
+ productdata:any[]=[]
   productgroup:any[]=[]
   productworkdata:any[]=[]
   unifieddata:any[]=[]
   unitdata:any[]=[]
   workgroupdata:any[]=[]
+  Locationdata:any[]=[]
   dd:any[]=[];
   tempVar: any;
 
@@ -94,6 +95,12 @@ export class PopComponent implements OnInit {
       },
       error:()=>{this.unitdata= []}
     });
+    this.popser.getdesigination("Location").subscribe({
+      next:(data:any)=>{
+        this.Locationdata = data;
+      },
+      error:()=>{this.Locationdata= []}
+    });
 
     this.popser.getdesigination("Work_Group").subscribe({
       next:(data:any)=>{
@@ -103,14 +110,14 @@ export class PopComponent implements OnInit {
     });
     this.pop = this.formBuilder.group({
       DedalusId: ['', Validators.required],
-      EmployeeCode: ['', Validators.required],
-      EmployeeName: ['', Validators.required],
+      EmployeeCode: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      EmployeeName: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
       Employee_MailId: ['', [Validators.required, Validators.email]],
       Gender: ['', Validators.required],
       Location: ['', Validators.required],
-      ManagerName: ['', Validators.required],
+      ManagerName: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
       ManagerMailId: ['',  [Validators.required, Validators.email]],
-      ManagerCode: ['', Validators.required],
+      ManagerCode: ['',  [Validators.required, Validators.pattern('^[0-9]+$')]],
       DateofJoin: ['', Validators.required],
       ProductGroup: ['', Validators.required],
       Product: ['', Validators.required],
@@ -121,19 +128,7 @@ export class PopComponent implements OnInit {
       HLDesignation: ['', Validators.required],
       HLTitle: ['', Validators.required],      
       Unit: ['', Validators.required],
-      Owning: ['', Validators.required],
-
-      // HL_Designation:this.getdomain("HL_Designation"),
-      // HL_Role:this.getdomain("HL_Role"),
-      // HL_Title:this.getdomain("HL_Title"),
-      // this.getdomain("Owning");
-      // this.getdomain("Product");
-      // this.getdomain("Product_Work_Area");
-      // this.getdomain("Unified_Roles");
-      // this.getdomain("Unit");
-      // this.getdomain("Work_Group");
-      // this.getdomain("Product_Group");
-
+      Owning: ['', Validators.required],      
     });
    
   }
@@ -157,7 +152,7 @@ export class PopComponent implements OnInit {
             //   EmployeeCode:this.dataGot.EmployeeCode
              // })
             formData = this.pop.value;  
-            this.formSubmitted = false; // Set the formSubmitted flag to true  
+            this.formSubmitted = false;  
           },
           error => {
             console.error('Error:', error);
@@ -165,16 +160,16 @@ export class PopComponent implements OnInit {
           }
         );
     } else {
-      console.log('Invalid form');
-      const missingFields = [];
+      // console.log('Invalid form');
+      // const missingFields = [];
   
-      for (const control in this.pop.controls) {
-        if (this.pop.controls[control].invalid) {
-          missingFields.push(control);
-        }
-      }
+      // for (const control in this.pop.controls) {
+      //   if (this.pop.controls[control].invalid) {
+      //     missingFields.push(control);
+      //   }
+      // }
   
-      alert("Please fill in the following mandatory fields: " + missingFields.join(', '));
+      alert("Please fill in the mandatory fields ");
     }
   }
   

@@ -1,5 +1,6 @@
 .container {
-  margin-left: 100px;
+  margin-left: 40px;
+  margin-top: 20px;
 }
 .card {
   width: 100%;
@@ -11,27 +12,37 @@
 .mainHeader {
   border: 1px solid black;
   border-radius: 5px;
+  background-color: #003e80;
 }
 
 .classRow {
   padding: 10px;
 }
 
-.clearForm {
+/* .clearForm {
   float: left;
   text-align: left;
+  flex: 50%;
+} */
+.buttons{
+  display: flex; 
+  margin-bottom: 13px;
 }
-
+#submit{
+  margin-left: 78%;
+}
 .title {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
+  color: white;
 }
 
-.confirmForm {
+/* .confirmForm {
   float: right;
   text-align: right;
-}
+  flex: 50%;
+} */
 
 .form-group {
   margin-bottom: 15px;
@@ -122,3 +133,20 @@
     padding-top:20px;
     overflow-x: hidden;
 }
+
+input,
+input::placeholder {
+  font-size: 14px;
+}
+.options{
+  font-size: 14px;
+}
+option{
+  font-size: 14px;
+}
+select {
+  font-size: 16px;
+}
+/* select, select::selection{
+  font-size: 20px;
+} */
